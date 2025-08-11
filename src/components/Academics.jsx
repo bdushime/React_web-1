@@ -1,25 +1,25 @@
-import { GraduationCap, Book, Users, Calendar } from 'react-icons/lu';
+// import { GraduationCap, Book, Users, Calendar } from 'react-icons/lu';
 
 const Academics = () => {
   const programs = [
     {
       category: "Business & Economics",
-      icon: <GraduationCap className="w-8 h-8" />,
+      icon: "hello",
       programs: ["Business Administration", "Economics", "Accounting", "Marketing", "International Business"]
     },
     {
       category: "Health Sciences",
-      icon: <Book className="w-8 h-8" />,
+      icon: "Hello",
       programs: ["Medicine", "Nursing", "Public Health", "Medical Laboratory Sciences", "Pharmacy"]
     },
     {
       category: "Education",
-      icon: <Users className="w-8 h-8" />,
+      icon: "Hello",
       programs: ["Education Administration", "Curriculum & Instruction", "Educational Psychology", "Early Childhood Education"]
     },
     {
       category: "Theology & Religious Studies",
-      icon: <Calendar className="w-8 h-8" />,
+      icon: "hello",
       programs: ["Theology", "Pastoral Ministry", "Biblical Studies", "Church Leadership", "Religious Education"]
     }
   ];
