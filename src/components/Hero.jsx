@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Hero() {
   // This keeps track of which slide is showing
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // This is just to trigger some animations after loading
-  const [isLoaded, setIsLoaded] = useState(false);
 
   // All the slides (image + text)
   const slides = [
@@ -32,15 +29,15 @@ export default function Hero() {
     }
   ];
 
-  // Change slide automatically every 6 seconds
-  useEffect(() => {
-    setIsLoaded(true); // trigger animations after mount
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+  // Function to go to next slide
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  // Function to go to previous slide
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
@@ -48,10 +45,8 @@ export default function Hero() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 z-0 transition-all duration-1000 ease-in-out ${
-            currentSlide === index
-              ? "opacity-100 scale-100"
-              : "opacity-0 scale-110"
+          className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
+            currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
@@ -64,48 +59,44 @@ export default function Hero() {
         </div>
       ))}
 
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+        aria-label="Previous slide"
+      >
+        ‹
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+        aria-label="Next slide"
+      >
+        ›
+      </button>
+
       {/* Content */}
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl text-white">
-          {/* Slide text */}
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-1000 ${
-                currentSlide === index
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8 absolute"
-              }`}
-            >
-              <h1
-                className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${
-                  isLoaded ? "animate-fade-in" : ""
-                }`}
-              >
-                {slide.heading}
-              </h1>
-              <p
-                className={`text-lg md:text-xl mb-8 text-white/90 ${
-                  isLoaded ? "animate-fade-in-delay" : ""
-                }`}
-              >
-                {slide.subheading}
-              </p>
-            </div>
-          ))}
+          {/* Current slide text */}
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              {slides[currentSlide].heading}
+            </h1>
+            <p className="text-lg md:text-xl mb-8 text-white/90">
+              {slides[currentSlide].subheading}
+            </p>
+          </div>
 
           {/* Buttons */}
-          <div
-            className={`flex flex-wrap gap-4 ${
-              isLoaded ? "animate-fade-in-delay-2" : ""
-            }`}
-          >
+          <div className="flex flex-wrap gap-4 mb-12">
             <a
               href="#admissions"
               className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition-colors flex items-center"
             >
               Apply Now
-              <span className="ml-1">{">"}</span>
+              <span className="ml-1">→</span>
             </a>
             <a
               href="#programs"
@@ -116,7 +107,7 @@ export default function Hero() {
           </div>
 
           {/* Dots Navigation */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="flex space-x-3">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -131,6 +122,11 @@ export default function Hero() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Slide Counter (optional - shows current slide) */}
+      <div className="absolute bottom-4 right-4 z-10 bg-black/30 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+        {currentSlide + 1} / {slides.length}
       </div>
     </section>
   );
