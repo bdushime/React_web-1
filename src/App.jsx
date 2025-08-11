@@ -5,6 +5,8 @@ import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import { QuickLinks } from './components/Quicklinks'
+import Footer from './components/footer'
+import CampusLife from './components/CampusLife'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <main>
         <Hero />
         <QuickLinks />
+        <CampusLife />
+        <Footer />
       </main>
     </div>
   )
