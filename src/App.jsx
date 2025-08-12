@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import { QuickLinks } from './components/Quicklinks'
 import { ResearchSection } from './components/Research'
+import { NewsEventsSection } from './components/NewsEventsSection'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <QuickLinks />
         <ResearchSection />
+        <NewsEventsSection />
       </main>
     </div>
   )
