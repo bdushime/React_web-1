@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import { QuickLinks } from './components/Quicklinks'
+import QuickLinks from './components/Quicklinks'
+import Academics from './components/Academics'
 
 function App() {
 
@@ -14,9 +15,10 @@ function App() {
       <main>
         <Hero />
         <QuickLinks />
+        <Academics />
       </main>
     </div>
   )
 }
 
-export default App
+export default App;

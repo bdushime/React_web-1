@@ -1,6 +1,6 @@
 
 import { BookOpen, Users, Calendar, GraduationCap } from 'lucide-react';
-export function QuickLinks() {
+export default function QuickLinks() {
   const links = [{
     title: 'Admissions',
     description: 'Application process and requirements',
