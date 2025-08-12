@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import { QuickLinks } from './components/Quicklinks'
+import { ResearchSection } from './components/Research'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <QuickLinks />
+        <ResearchSection />
       </main>
     </div>
   )
