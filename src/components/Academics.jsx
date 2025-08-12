@@ -4,22 +4,22 @@ const Academics = () => {
   const programs = [
     {
       category: "Business & Economics",
-      icon: "hello",
+      icon: "Business",
       programs: ["Business Administration", "Economics", "Accounting", "Marketing", "International Business"]
     },
     {
       category: "Health Sciences",
-      icon: "Hello",
+      icon: "Health",
       programs: ["Medicine", "Nursing", "Public Health", "Medical Laboratory Sciences", "Pharmacy"]
     },
     {
       category: "Education",
-      icon: "Hello",
+      icon: "Education",
       programs: ["Education Administration", "Curriculum & Instruction", "Educational Psychology", "Early Childhood Education"]
     },
     {
       category: "Theology & Religious Studies",
-      icon: "hello",
+      icon: "Bible",
       programs: ["Theology", "Pastoral Ministry", "Biblical Studies", "Church Leadership", "Religious Education"]
     }
   ];
