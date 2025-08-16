@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import QuickLinks from './components/Quicklinks'
-import Academics from './components/Academics'
+import FacultyDirectory from "./FacultyDirectory";
+import FacultyServices from "./FacultyServices";
+import Footer from "./Footer";
+import HeroSection from "./HeroSection";
+import QuickLinks from "./QuicksLink";
+import ResourceCategories from "./ResourceCategories";
+
 
 function App() {
 
   return (
-  <div className="font-sans min-h-screen bg-white">
-      <Header />
-      <main>
-        <Hero />
-        <QuickLinks />
-        <Academics />
-      </main>
+<div className="min-h-screen bg-white">
+      <HeroSection />
+      <FacultyServices />
+      <ResourceCategories />
+      <FacultyDirectory />
+      <QuickLinks />
+      <Footer />
     </div>
   )
 }
