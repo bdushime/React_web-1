@@ -18,14 +18,14 @@ export default function Hero() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1170&q=80",
+        "https://encyclosource.com/link/api/v1/image/ESDA/EAQQ/EAQQL.jpg",
       heading: "Discover Your Potential",
       subheading:
         "World-class facilities and dedicated faculty to help you excel in your chosen field."
     },
     {
       image:
-        "https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=1949&q=80",
+        "https://assets.weforum.org/article/image/responsive_big_webp_pvHwd-UDSSKJlYUP8ic24kGrlqfMaCSlTFQljAb4zjY.webp",
       heading: "Faith, Learning, Service",
       subheading:
         "Experience education that transforms your mind, heart, and hands."
