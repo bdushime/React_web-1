@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 export default function Hero() {
-  // This keeps track of which slide is showing
+ 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // This is just to trigger some animations after loading
+ 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // All the slides (image + text)
   const slides = [
     {
       image:
@@ -32,9 +31,8 @@ export default function Hero() {
     }
   ];
 
-  // Change slide automatically every 6 seconds
   useEffect(() => {
-    setIsLoaded(true); // trigger animations after mount
+    setIsLoaded(true); 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
@@ -44,7 +42,7 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Background images */}
+     
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -59,15 +57,15 @@ export default function Hero() {
             alt="Hero background"
             className="w-full h-full object-cover"
           />
-          {/* Dark overlay for better text visibility */}
+          
           <div className="absolute inset-0 bg-blue-900/50"></div>
         </div>
       ))}
 
-      {/* Content */}
+     
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl text-white">
-          {/* Slide text */}
+          
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -94,7 +92,6 @@ export default function Hero() {
             </div>
           ))}
 
-          {/* Buttons */}
           <div
             className={`flex flex-wrap gap-4 ${
               isLoaded ? "animate-fade-in-delay-2" : ""
@@ -115,7 +112,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Dots Navigation */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slides.map((_, index) => (
               <button

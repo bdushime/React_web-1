@@ -1,4 +1,4 @@
-// import { GraduationCap, Book, Users, Calendar } from 'react-icons/lu';
+
 
 const Academics = () => {
   const programs = [
@@ -35,7 +35,7 @@ const Academics = () => {
     <section id="academics" className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Heading */}
+       
         <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
@@ -48,7 +48,6 @@ const Academics = () => {
           </p>
         </div>
 
-        {/* Programs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {programs.map((category, index) => (
             <div
@@ -80,7 +79,6 @@ const Academics = () => {
           ))}
         </div>
 
-        {/* Faculties */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
@@ -108,7 +106,6 @@ const Academics = () => {
           </div>
         </div>
 
-        {/* Academic Calendar */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white animate-fadeIn">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold mb-4"

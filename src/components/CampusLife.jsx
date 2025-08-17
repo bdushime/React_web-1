@@ -85,7 +85,7 @@ export default function CampusLife(){
           </p>
         </div>
 
-        {/* Campus Facilities */}
+       
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
@@ -116,7 +116,7 @@ export default function CampusLife(){
           </div>
         </div>
 
-        {/* Student Organizations */}
+     
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
@@ -141,7 +141,7 @@ export default function CampusLife(){
           </div>
         </div>
 
-        {/* Campus Events */}
+     
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
@@ -168,7 +168,6 @@ export default function CampusLife(){
           </div>
         </div>
 
-        {/* Call to Action */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-6"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
