@@ -16,13 +16,13 @@ import { Link } from "react-router-dom";
 
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
-  const [isScrolled, setIsScrolled] = useState(false); // Scroll detection
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isScrolled, setIsScrolled] = useState(false); 
 
-  // Track which dropdown is open (for mobile view)
+  
   const [openDropdown, setOpenDropdown] = useState(null);
 
-  // Detect scrolling to change header style
+  
   useEffect(() => {
     function handleScroll() {
       if (window.scrollY > 10) {
@@ -36,7 +36,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation links (some have a submenu)
+  
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
@@ -65,7 +65,7 @@ export default function Header() {
         
         <Logo />
 
-        {/* Desktop Navigation */}
+      
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
             <div key={link.name} className="relative group">
@@ -76,7 +76,7 @@ export default function Header() {
               >
                 {link.name}
                 {link.submenu && (
-                  <span className="ml-1 text-sm">▼</span> // Small dropdown arrow
+                  <span className="ml-1 text-sm">▼</span> 
                 )}
               </Link>
 
@@ -98,7 +98,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Apply Button */}
         <div className="hidden md:block">
           <a
             href="#apply"
@@ -108,7 +107,6 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -117,13 +115,12 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-3">
             {navLinks.map((link, index) => (
               <div key={link.name}>
-                {/* Main mobile link */}
+              
                 <div
                   className="flex justify-between items-center py-2 text-gray-800 font-medium cursor-pointer"
                   onClick={() =>
@@ -136,7 +133,6 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Show submenu in mobile when clicked */}
                 {link.submenu && openDropdown === index && (
                   <div className="ml-4">
                     {link.submenu.map((sublink) => (
@@ -154,7 +150,6 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Mobile Apply Now */}
             <div className="mt-4 mb-2">
               <a
                 href="#apply"

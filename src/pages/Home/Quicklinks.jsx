@@ -1,5 +1,4 @@
 
-// import { BookOpen, Users, Calendar, GraduationCap } from 'lucide-react';
 export default function QuickLinks() {
   const links = [{
     title: 'Admissions',
