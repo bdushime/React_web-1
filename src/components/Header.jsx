@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
  function Logo() {
   return <a href="#" className="flex items-center">
@@ -37,21 +38,21 @@ export default function Header() {
 
   // Navigation links (some have a submenu)
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
     {
       name: "Academics",
-      href: "#academics",
+      href: "/#academics",
       submenu: [
-        { name: "Programs", href: "#programs" },
-        { name: "Faculties", href: "#faculties" },
-        { name: "Academic Calendar", href: "#calendar" }
+        { name: "Programs", href: "/#programs" },
+        { name: "Faculties", href: "/faculty" },
+        { name: "Academic Calendar", href: "/#calendar" }
       ]
     },
-    { name: "Admissions", href: "#admissions" },
-    { name: "Campus Life", href: "#campus-life" },
-    { name: "Research", href: "#research" },
-    { name: "Contact", href: "#contact" }
+    { name: "Admissions", href: "/#admissions" },
+    { name: "Campus Life", href: "/#campus-life" },
+    { name: "Research", href: "/#research" },
+    { name: "Contact", href: "/#contact" }
   ];
 
   return (
@@ -69,27 +70,27 @@ export default function Header() {
           {navLinks.map((link, index) => (
             <div key={link.name} className="relative group">
               {/* Main link */}
-              <a
-                href={link.href}
-                className="text-gray-800 hover:text-blue-700 font-medium  transition-colors flex items-center"
+              <Link
+                to={link.href}
+                className="text-gray-800 hover:text-blue-700 font-medium transition-colors flex items-center"
               >
                 {link.name}
                 {link.submenu && (
                   <span className="ml-1 text-sm">▼</span> // Small dropdown arrow
                 )}
-              </a>
+              </Link>
 
               {/* Submenu (visible on hover in desktop) */}
               {link.submenu && (
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   {link.submenu.map((sublink) => (
-                    <a
+                    <Link
                       key={sublink.name}
-                      href={sublink.href}
+                      to={sublink.href}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700"
                     >
                       {sublink.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

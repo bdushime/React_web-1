@@ -1,5 +1,7 @@
 // import { GraduationCap, Book, Users, Calendar } from 'react-icons/lu';
 
+import { Link } from "react-router-dom";
+
 const Academics = () => {
   const programs = [
     {
@@ -93,6 +95,7 @@ const Academics = () => {
                 className="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 animate-slideUp"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
+                <Link to="/faculty">
                 <h4 className="text-lg font-bold text-gray-900 mb-3"
                     style={{ fontFamily: '"Palatino Linotype", serif' }}>
                   {faculty.name}
@@ -103,6 +106,7 @@ const Academics = () => {
                   <p><span className="font-semibold">Departments:</span> {faculty.departments}</p>
                   <p><span className="font-semibold">Students:</span> {faculty.students}+</p>
                 </div>
+                </Link>
               </div>
             ))}
           </div>

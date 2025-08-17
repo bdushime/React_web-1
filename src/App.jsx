@@ -1,22 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import QuickLinks from './components/Quicklinks'
-import Academics from './components/Academics'
+import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import FacultyPage from "./pages/Faculty/FacultyPage";
+import HomePage from "./pages/Home/HomePage";
 
 function App() {
   return (
-  <div className="font-sans min-h-screen bg-white">
-      <Header />
-      <main>
-        <Hero />
-        <QuickLinks />
-        <Academics />
-      </main>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/faculty" element={<FacultyPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
