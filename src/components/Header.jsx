@@ -71,7 +71,7 @@ export default function Header() {
               {/* Main link */}
               <a
                 href={link.href}
-                className="text-gray-800 hover:text-blue-700 font-medium transition-colors flex items-center"
+                className="text-gray-800 hover:text-blue-700 font-medium  transition-colors flex items-center"
               >
                 {link.name}
                 {link.submenu && (
