@@ -4,15 +4,15 @@ export function ResearchSection() {
   const researchAreas = [{
     title: 'Sustainable Development',
     description: 'Research focused on sustainable practices and development in Central Africa.',
-    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80'
+    image: 'https://auca.ac.rw/wp-content/uploads/2025/07/1749105044804.jpeg'
   }, {
     title: 'Public Health',
     description: 'Studies addressing critical health challenges in the region.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    image: 'https://auca.ac.rw/wp-content/uploads/2025/07/1749451961390.jpeg'
   }, {
     title: 'Information Technology',
     description: 'Innovations in technology and digital solutions for local challenges.',
-    image: 'https://images.unsplash.com/photo-1581092921461-fd0e43f5e568?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    image: 'https://auca.ac.rw/wp-content/uploads/2025/07/1751622726912-1536x1024.jpeg'
   }];
   return <section id="research" className="py-16 bg-white">
       <div className="container mx-auto px-4">
