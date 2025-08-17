@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
- function Logo() {
-  return <a href="#" className="flex items-center">
+function Logo() {
+  return (
+    <a href="#" className="flex items-center">
       <div className="text-blue-700 font-bold text-xl md:text-2xl">
         <span className="text-blue-900">AUCA</span>
       </div>
@@ -12,29 +13,12 @@ import { Link } from "react-router-dom";
         of Central Africa
       </div>
     </a>
+  );
 }
 
-
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  const [isScrolled, setIsScrolled] = useState(false); 
-
-  
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  
-  useEffect(() => {
-    function handleScroll() {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    }
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
+  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
 
   
   const navLinks = [
@@ -51,16 +35,12 @@ export default function Header() {
     },
     { name: "Admissions", href: "/#admissions" },
     { name: "Campus Life", href: "/#campus-life" },
-    { name: "Research", href: "/#research" },
+    { name: "Research", href: "/research" },
     { name: "Contact", href: "/#contact" }
   ];
 
   return (
-    <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-      }`}
-    >
+    <header className="fixed w-full z-50 bg-white shadow-md py-3">
       <div className="container mx-auto px-4 flex justify-between items-center">
         
         <Logo />
@@ -72,26 +52,28 @@ export default function Header() {
               {/* Main link */}
               <Link
                 to={link.href}
-                className="text-gray-800 hover:text-blue-700 font-medium transition-colors flex items-center"
+                className="text-gray-800 hover:text-blue-700 font-medium flex items-center"
               >
                 {link.name}
                 {link.submenu && (
-                  <span className="ml-1 text-sm">▼</span> 
+                  <span className="ml-1 text-sm">▼</span>
                 )}
               </Link>
 
-              {/* Submenu (visible on hover in desktop) */}
+              {/* Submenu (shows on hover in desktop) */}
               {link.submenu && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  {link.submenu.map((sublink) => (
-                    <Link
-                      key={sublink.name}
-                      to={sublink.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700"
-                    >
-                      {sublink.name}
-                    </Link>
-                  ))}
+                <div className="absolute left-0 top-full pt-1 w-48 hidden group-hover:block">
+                  <div className="bg-white rounded-md shadow-lg border">
+                    {link.submenu.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        to={sublink.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 first:rounded-t-md last:rounded-b-md"
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -101,45 +83,55 @@ export default function Header() {
         <div className="hidden md:block">
           <a
             href="#apply"
-            className="bg-blue-700 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-800 transition-colors"
+            className="bg-blue-700 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-800"
           >
             Apply Now
           </a>
         </div>
 
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden text-gray-800 font-medium"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? "Close" : "Menu"}
+          {isMenuOpen ? "✕" : "☰"}
         </button>
       </div>
 
+      {/* Mobile Navigation - Only shows when isMenuOpen is true */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden bg-white border-t shadow-lg">
           <div className="container mx-auto px-4 py-3">
             {navLinks.map((link, index) => (
               <div key={link.name}>
               
                 <div
-                  className="flex justify-between items-center py-2 text-gray-800 font-medium cursor-pointer"
-                  onClick={() =>
-                    setOpenDropdown(openDropdown === index ? null : index)
-                  }
+                  className="flex justify-between items-center py-3 text-gray-800 font-medium cursor-pointer border-b border-gray-100"
+                  onClick={() => {
+                    // If this link has a submenu, toggle it open/closed
+                    if (link.submenu) {
+                      setOpenDropdown(openDropdown === index ? null : index);
+                    } else {
+                      // If it's a regular link, close the mobile menu
+                      setIsMenuOpen(false);
+                    }
+                  }}
                 >
-                  <span>{link.name}</span>
+                  <span className="hover:text-blue-700">{link.name}</span>
                   {link.submenu && (
-                    <span className="text-sm">{openDropdown === index ? "▲" : "▼"}</span>
+                    <span className="text-sm text-blue-700">
+                      {openDropdown === index ? "▲" : "▼"}
+                    </span>
                   )}
                 </div>
 
+                {/* Show submenu in mobile when openDropdown matches this index */}
                 {link.submenu && openDropdown === index && (
-                  <div className="ml-4">
+                  <div className="ml-4 bg-gray-50 rounded-md mt-2 mb-2">
                     {link.submenu.map((sublink) => (
                       <a
                         key={sublink.name}
                         href={sublink.href}
-                        className="block py-1 text-gray-700 hover:text-blue-700"
+                        className="block py-2 px-3 text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {sublink.name}
@@ -150,10 +142,11 @@ export default function Header() {
               </div>
             ))}
 
-            <div className="mt-4 mb-2">
+            {/* Mobile Apply Now Button */}
+            <div className="mt-4 pt-3 border-t border-gray-100">
               <a
                 href="#apply"
-                className="block w-full bg-blue-700 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-800 transition-colors text-center"
+                className="block w-full bg-blue-700 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-800 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Apply Now
