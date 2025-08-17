@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+
 
 function Logo() {
   return (
@@ -26,7 +28,7 @@ export default function Header() {
     { name: "About", href: "/#about" },
     {
       name: "Academics",
-      href: "/#academics",
+      href: "#",
       submenu: [
         { name: "Programs", href: "/#programs" },
         { name: "Faculties", href: "/faculty" },
@@ -50,7 +52,7 @@ export default function Header() {
           {navLinks.map((link, index) => (
             <div key={link.name} className="relative group">
               {/* Main link */}
-              <Link
+              <HashLink smooth
                 to={link.href}
                 className="text-gray-800 hover:text-blue-700 font-medium flex items-center"
               >
@@ -58,20 +60,20 @@ export default function Header() {
                 {link.submenu && (
                   <span className="ml-1 text-sm">▼</span>
                 )}
-              </Link>
+              </HashLink>
 
               {/* Submenu (shows on hover in desktop) */}
               {link.submenu && (
                 <div className="absolute left-0 top-full pt-1 w-48 hidden group-hover:block">
                   <div className="bg-white rounded-md shadow-lg border">
                     {link.submenu.map((sublink) => (
-                      <Link
+                      <HashLink smooth
                         key={sublink.name}
                         to={sublink.href}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 first:rounded-t-md last:rounded-b-md"
                       >
                         {sublink.name}
-                      </Link>
+                      </HashLink>
                     ))}
                   </div>
                 </div>
