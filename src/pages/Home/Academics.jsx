@@ -34,7 +34,7 @@ const Academics = () => {
   ];
 
   return (
-    <section id="academics" className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 bg-gradient-to-b from-white to-blue-50" id="admissions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
        
@@ -86,7 +86,7 @@ const Academics = () => {
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
             Our Faculties
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="calendar">
             {faculties.map((faculty, index) => (
               <div
                 key={index}
@@ -102,7 +102,7 @@ const Academics = () => {
                      style={{ fontFamily: 'Arial, sans-serif' }}>
                   <p><span className="font-semibold">Dean:</span> {faculty.dean}</p>
                   <p><span className="font-semibold">Departments:</span> {faculty.departments}</p>
-                  <p><span className="font-semibold">Students:</span> {faculty.students}+</p>
+                  <p ><span className="font-semibold">Students:</span> {faculty.students}+</p>
                 </div>
                 </Link>
               </div>
@@ -110,7 +110,7 @@ const Academics = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white animate-fadeIn">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white animate-fadeIn" >
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold mb-4"
                 style={{ fontFamily: '"Palatino Linotype", serif' }}>

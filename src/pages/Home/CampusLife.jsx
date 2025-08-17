@@ -142,7 +142,7 @@ export default function CampusLife(){
         </div>
 
      
-        <div className="mb-16">
+        <div className="mb-16" id='programs'>
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
               style={{ fontFamily: '"Palatino Linotype", serif' }}>
             Upcoming Events
