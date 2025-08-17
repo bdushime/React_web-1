@@ -3,6 +3,9 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import QuickLinks from './components/Quicklinks'
 import Academics from './components/Academics'
+import { QuickLinks } from './components/Quicklinks'
+import Footer from './components/footer'
+import CampusLife from './components/CampusLife'
 
 function App() {
 
@@ -12,8 +15,12 @@ function App() {
       <main>
         <Hero />
         <QuickLinks />
-        <Academics />
+
         <AboutSection />
+        <Academics />
+
+        <CampusLife />
+        <Footer />
       </main>
     </div >
   );
