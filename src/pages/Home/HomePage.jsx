@@ -6,6 +6,7 @@ import AboutSection from './AboutSection'
 import Academics from './Academics'
 import CampusLife from './CampusLife'
 import Footer from '../../components/footer'
+import Calendar from './Calendar'
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
 
         <AboutSection />
         <Academics />
+          <Calendar />
 
         <CampusLife />
         <Footer />
