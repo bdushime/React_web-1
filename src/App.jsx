@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 import { QuickLinks } from './components/Quicklinks'
 import { ResearchSection } from './components/Research'
 import { NewsEventsSection } from './components/NewsEventsSection'
+import { ProgramsSection } from './components/AcademicPrograms'
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <QuickLinks />
+        {/* <QuickLinks /> */}
         <ResearchSection />
+        <ProgramsSection />
         <NewsEventsSection />
       </main>
     </div>
