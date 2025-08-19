@@ -1,27 +1,26 @@
-
-
 import { Link } from "react-router-dom";
-
+import Calendar from "./Calendar";
+import { GraduationCap, Book, Users, Calendar as CalenderIcon } from 'lucide-react';
 const Academics = () => {
   const programs = [
-    {
+        {
       category: "Business & Economics",
-      icon: "Business",
+      icon: <GraduationCap className="w-8 h-8" />,
       programs: ["Business Administration", "Economics", "Accounting", "Marketing", "International Business"]
     },
     {
       category: "Health Sciences",
-      icon: "Health",
+      icon: <Book className="w-8 h-8" />,
       programs: ["Medicine", "Nursing", "Public Health", "Medical Laboratory Sciences", "Pharmacy"]
     },
     {
       category: "Education",
-      icon: "Education",
+      icon: <Users className="w-8 h-8" />,
       programs: ["Education Administration", "Curriculum & Instruction", "Educational Psychology", "Early Childhood Education"]
     },
     {
       category: "Theology & Religious Studies",
-      icon: "Bible",
+      icon: <CalenderIcon className="w-8 h-8" />,
       programs: ["Theology", "Pastoral Ministry", "Biblical Studies", "Church Leadership", "Religious Education"]
     }
   ];
@@ -81,63 +80,9 @@ const Academics = () => {
           ))}
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12"
-              style={{ fontFamily: '"Palatino Linotype", serif' }}>
-            Our Faculties
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="calendar">
-            {faculties.map((faculty, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 animate-slideUp"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <Link to="/faculty">
-                <h4 className="text-lg font-bold text-gray-900 mb-3"
-                    style={{ fontFamily: '"Palatino Linotype", serif' }}>
-                  {faculty.name}
-                </h4>
-                <div className="space-y-2 text-sm text-gray-600"
-                     style={{ fontFamily: 'Arial, sans-serif' }}>
-                  <p><span className="font-semibold">Dean:</span> {faculty.dean}</p>
-                  <p><span className="font-semibold">Departments:</span> {faculty.departments}</p>
-                  <p ><span className="font-semibold">Students:</span> {faculty.students}+</p>
-                </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white animate-fadeIn" >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4"
-                style={{ fontFamily: '"Palatino Linotype", serif' }}>
-              Academic Calendar 2024-2025
-            </h3>
-            <p className="text-blue-100 text-lg"
-               style={{ fontFamily: 'Arial, sans-serif' }}>
-              Important dates and deadlines for the academic year
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Semester 1", start: "September 2024", end: "December 2024", exams: "January 2025" },
-              { title: "Semester 2", start: "February 2025", end: "May 2025", exams: "June 2025" },
-              { title: "Summer Session", start: "July 2025", end: "August 2025", exams: "Intensive Programs" }
-            ].map((sem, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300">
-                <h4 className="text-xl font-bold mb-4">{sem.title}</h4>
-                <div className="space-y-2 text-blue-100">
-                  <p>Start: {sem.start}</p>
-                  <p>End: {sem.end}</p>
-                  <p>Exams: {sem.exams}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+       
+          <Calendar />
+        
 
       </div>
     </section>

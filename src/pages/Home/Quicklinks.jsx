@@ -1,24 +1,25 @@
 
+import { BookOpen, Calendar, GraduationCap, Users } from "lucide-react";
 export default function QuickLinks() {
   const links = [{
     title: 'Admissions',
     description: 'Application process and requirements',
-    icon: "GraduationCap",
+    icon: <GraduationCap />,
     href: '#admissions'
   }, {
     title: 'Programs',
     description: 'Undergraduate and postgraduate degrees',
-    icon: "BookOpen",
+    icon: <BookOpen />,
     href: '#programs'
   }, {
     title: 'Campus Life',
     description: 'Student activities and facilities',
-    icon: "Users",
+    icon: <Users />,
     href: '#campus-life'
   }, {
     title: 'Events',
     description: 'Academic calendar and upcoming events',
-    icon: "Calendar",
+    icon: <Calendar />,
     href: '#events'
   }];
   return <section className="py-12 bg-gray-50">
