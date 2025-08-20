@@ -3,10 +3,10 @@ import Header from '../../components/Header'
 import Hero from './Hero'
 import QuickLinks from './Quicklinks'
 import AboutSection from './AboutSection'
-import Academics from './Academics'
 import CampusLife from './CampusLife'
 import Footer from '../../components/footer'
 import Calendar from './Calendar'
+import { ProgramsSection } from '../Admission/ProgramSection'
 
 const HomePage = () => {
   return (
@@ -17,7 +17,8 @@ const HomePage = () => {
         <QuickLinks />
 
         <AboutSection />
-        <Academics />
+        {/* <Academics /> */}
+        <ProgramsSection />
           <Calendar />
 
         <CampusLife />
