@@ -7,6 +7,7 @@ import CampusLife from './CampusLife'
 import Footer from '../../components/footer'
 import Calendar from './Calendar'
 import { ProgramsSection } from '../Admission/ProgramSection'
+import { CTASection } from './CTASection'
 
 const HomePage = () => {
   return (
@@ -14,7 +15,7 @@ const HomePage = () => {
       <Header />
       <main>
         <Hero />
-        <QuickLinks />
+        {/* <QuickLinks /> */}
 
         <AboutSection />
         {/* <Academics /> */}
@@ -22,6 +23,7 @@ const HomePage = () => {
           <Calendar />
 
         <CampusLife />
+        <CTASection   />
         <Footer />
       </main>
     </div >

@@ -37,8 +37,9 @@ export default function Header() {
       ]
     },
     { name: "Admissions", href: "/admission" },
-    { name: "Campus Life", href: "/#campus-life" },
+    { name: "Media Center", href: "/#campus-life" },
     { name: "Research", href: "/research" },
+    { name: "AUCA Alumni", href: "http://64.23.201.128/" },
     { name: "Contact", href: "/#contact" }
   ];
 

@@ -9,7 +9,6 @@ const ResearchPage = () => {
     <div>
         <Header />
         <Research />
-        <NewsEventsSection />
         <Footer />
     </div>
   )

@@ -1,7 +1,8 @@
 
 import { CalendarIcon, DownloadIcon, MailIcon } from 'lucide-react';
 export function CTASection() {
-  return <section className="py-16 bg-blue-900 text-white">
+  return (
+  <section className="py-16 bg-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -23,7 +24,7 @@ export function CTASection() {
           </a>
           <a href="#" className="flex flex-col items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-lg p-6 transition-colors duration-200">
             <DownloadIcon className="h-10 w-10 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Academic Bulletin</h3>
+            <h3 className="text-xl font-bold mb-2">Research Manual</h3>
             <p className="text-center text-sm mb-4">
               Get detailed program information
             </p>
@@ -43,5 +44,5 @@ export function CTASection() {
           </a>
         </div>
       </div>
-    </section>;
+    </section>)
 }
