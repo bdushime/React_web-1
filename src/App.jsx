@@ -3,6 +3,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import FacultyPage from "./pages/Faculty/FacultyPage";
 import HomePage from "./pages/Home/HomePage";
 import ResearchPage from "./pages/Research/ResearchPage";
+import NewsEventsSection from "./pages/NewsEventsSection";
+import { ProgramsSection } from "./pages/Admission/ProgramSection";
+import Layout from "./components/Layout";
 
 function App() {
   return (
@@ -11,6 +14,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/faculty" element={<FacultyPage />} />
         <Route path="/research" element={<ResearchPage />} />
+        <Route path="/news-events" element={<NewsEventsSection />} />
+        <Route path="/admission" element={<Layout />} >
+          <Route index element={<ProgramsSection />} />
+
+        </Route>
       </Routes>
     </BrowserRouter>
   );

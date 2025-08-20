@@ -1,5 +1,7 @@
 
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import Footer from '../components/footer';
+import Header from '../components/Header';
 
 export default function NewsEventsSection() {
   const newsItems = [
@@ -51,7 +53,9 @@ export default function NewsEventsSection() {
   ];
 
   return (
-    <section id="news-events" className="py-16 bg-gray-50">
+    <>
+    <Header />
+        <section id="news-events" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         
         {/* Section Header */}
@@ -130,5 +134,7 @@ export default function NewsEventsSection() {
 
       </div>
     </section>
+<Footer />
+    </>
   );
 }

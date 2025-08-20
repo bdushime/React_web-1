@@ -2,7 +2,7 @@ import React from 'react'
 
 const Calendar = () => {
     return (
-        <section className="py-20 bg-gradient-to-b from-white to-blue-50" id="admissions">
+        <section className="py-20 bg-gradient-to-b from-white to-blue-50" id="calendar">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white animate-fadeIn" >
                     <div className="text-center mb-8">

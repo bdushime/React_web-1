@@ -32,12 +32,14 @@ export default function Header() {
       submenu: [
         { name: "Programs", href: "/#programs" },
         { name: "Faculties", href: "/faculty" },
-        { name: "Academic Calendar", href: "/#calendar" }
+        { name: "Academic Calendar", href: "/#calendar" },
+        { name: "News and Events", href: "/news-events" }
       ]
     },
-    { name: "Admissions", href: "/#admissions" },
-    { name: "Campus Life", href: "/#campus-life" },
+    { name: "Admissions", href: "/admission" },
+    { name: "Media Center", href: "/#campus-life" },
     { name: "Research", href: "/research" },
+    { name: "AUCA Alumni", href: "http://64.23.201.128/" },
     { name: "Contact", href: "/#contact" }
   ];
 

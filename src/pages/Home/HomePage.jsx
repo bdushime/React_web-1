@@ -3,10 +3,11 @@ import Header from '../../components/Header'
 import Hero from './Hero'
 import QuickLinks from './Quicklinks'
 import AboutSection from './AboutSection'
-import Academics from './Academics'
 import CampusLife from './CampusLife'
 import Footer from '../../components/footer'
 import Calendar from './Calendar'
+import { ProgramsSection } from '../Admission/ProgramSection'
+import { CTASection } from './CTASection'
 
 const HomePage = () => {
   return (
@@ -14,13 +15,15 @@ const HomePage = () => {
       <Header />
       <main>
         <Hero />
-        <QuickLinks />
+        {/* <QuickLinks /> */}
 
         <AboutSection />
-        <Academics />
+        {/* <Academics /> */}
+        <ProgramsSection />
           <Calendar />
 
         <CampusLife />
+        <CTASection   />
         <Footer />
       </main>
     </div >
