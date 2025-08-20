@@ -40,7 +40,7 @@ export default function Header() {
     { name: "Media Center", href: "/#campus-life" },
     { name: "Research", href: "/research" },
     { name: "AUCA Alumni", href: "http://64.23.201.128/" },
-    { name: "Contact", href: "/#contact" }
+    { name: "Location", href: "https://maps.app.goo.gl/TrpLVRWtx6y6SibB9" }
   ];
 
   return (
