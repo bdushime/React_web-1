@@ -6,6 +6,7 @@ import ResearchPage from "./pages/Research/ResearchPage";
 import NewsEventsSection from "./pages/NewsEventsSection";
 import { ProgramsSection } from "./pages/Admission/ProgramSection";
 import Layout from "./components/Layout";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
         <Route path="/news-events" element={<NewsEventsSection />} />
         <Route path="/admission" element={<Layout />} >
           <Route index element={<ProgramsSection />} />
-
         </Route>
+          <Route path="/testimonials" element={<Layout />} >
+            <Route index element={<Testimonials />} />
+          </Route>
       </Routes>
     </BrowserRouter>
   );

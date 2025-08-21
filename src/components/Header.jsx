@@ -33,11 +33,12 @@ export default function Header() {
         { name: "Programs", href: "/#programs" },
         { name: "Faculties", href: "/faculty" },
         { name: "Academic Calendar", href: "/#calendar" },
-        { name: "News and Events", href: "/news-events" }
+        { name: "Testimonials", href: "/testimonials" },
       ]
     },
     { name: "Admissions", href: "/admission" },
     { name: "Media Center", href: "/#campus-life" },
+    { name: "News", href: "/news-events" },
     { name: "Research", href: "/research" },
     { name: "AUCA Alumni", href: "http://64.23.201.128/" },
     { name: "Location", href: "https://maps.app.goo.gl/TrpLVRWtx6y6SibB9" }
