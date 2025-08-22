@@ -7,7 +7,7 @@ export default function Hero() {
   const slides = [
     {
       image:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2070&q=80",
+        "https://encyclosource.com/link/api/v1/image/ESDA/EAQQ/EAQQL.jpg",
       heading: "Shape Your Future at Adventist University of Central Africa",
       subheading:
         "Join a community dedicated to academic excellence, spiritual growth, and service to humanity."
@@ -21,19 +21,18 @@ export default function Hero() {
     },
     {
       image:
-        "https://assets.weforum.org/article/image/responsive_big_webp_pvHwd-UDSSKJlYUP8ic24kGrlqfMaCSlTFQljAb4zjY.webp",
+        "https://encyclosource.com/link/api/v1/image/ESDA/EAQQ/EAQQL.jpg",
       heading: "Faith, Learning, Service",
       subheading:
         "Experience education that transforms your mind, heart, and hands."
     }
   ];
 
-  // Function to go to next slide
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
-  // Function to go to previous slide
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
@@ -58,7 +57,6 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"
@@ -75,10 +73,9 @@ export default function Hero() {
         ›
       </button>
 
-      {/* Content */}
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl text-white">
-          {/* Current slide text */}
+    
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {slides[currentSlide].heading}
@@ -88,7 +85,6 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Buttons */}
           <div className="flex flex-wrap gap-4 mb-12">
             <a
               href="#admissions"
@@ -105,7 +101,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Dots Navigation */}
           <div className="flex space-x-3">
             {slides.map((_, index) => (
               <button
@@ -123,7 +118,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Slide Counter (optional - shows current slide) */}
+   
       <div className="absolute bottom-4 right-4 z-10 bg-black/30 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
         {currentSlide + 1} / {slides.length}
       </div>

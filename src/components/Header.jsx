@@ -54,7 +54,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
             <div key={link.name} className="relative group">
-              {/* Main link */}
+         
               <HashLink smooth
                 to={link.href}
                 className="text-gray-800 hover:text-blue-700 font-medium flex items-center"
@@ -65,7 +65,6 @@ export default function Header() {
                 )}
               </HashLink>
 
-              {/* Submenu (shows on hover in desktop) */}
               {link.submenu && (
                 <div className="absolute left-0 top-full pt-1 w-48 hidden group-hover:block">
                   <div className="bg-white rounded-md shadow-lg border">
@@ -102,7 +101,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation - Only shows when isMenuOpen is true */}
+   
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t shadow-lg">
           <div className="container mx-auto px-4 py-3">
@@ -112,11 +111,11 @@ export default function Header() {
                 <div
                   className="flex justify-between items-center py-3 text-gray-800 font-medium cursor-pointer border-b border-gray-100"
                   onClick={() => {
-                    // If this link has a submenu, toggle it open/closed
+           
                     if (link.submenu) {
                       setOpenDropdown(openDropdown === index ? null : index);
                     } else {
-                      // If it's a regular link, close the mobile menu
+                     
                       setIsMenuOpen(false);
                     }
                   }}
@@ -129,7 +128,7 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Show submenu in mobile when openDropdown matches this index */}
+          
                 {link.submenu && openDropdown === index && (
                   <div className="ml-4 bg-gray-50 rounded-md mt-2 mb-2">
                     {link.submenu.map((sublink) => (
@@ -147,7 +146,6 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Mobile Apply Now Button */}
             <div className="mt-4 pt-3 border-t border-gray-100">
               <a
                 href="#apply"
